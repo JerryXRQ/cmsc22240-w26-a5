@@ -1,12 +1,12 @@
 SHELL = /bin/sh
 
 CC = mpicc
-CFLAG = -Wall -g 
+CFLAG = -Wall -g
 
-all: newton
+all: mandelbrot
 
-newton:
-	${CC} ${CFLAG} newton.c -o newton -lm
+mandelbrot:
+	${CC} ${CFLAG} mandelbrot.c -o mandelbrot
 
 clean:
-	rm newton
+	rm mandelbrot
