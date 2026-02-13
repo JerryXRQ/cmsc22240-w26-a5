@@ -89,7 +89,7 @@ int main(int argc, char** argv)
     // Iterate that complex number
     for (int i = 1; i <= stepYRank; i++)
     {
-        y = (i - 1) * worldSize + worldRank;
+        y = (i - 1) * worldSize + worldRank + 1;
         for (x = 1; x <= maxX; x++)
         {
             // c_real
@@ -150,9 +150,9 @@ int main(int argc, char** argv)
             time_diff(&start, &end));
         printf("Writing mandelbrot output to %s ...\n", outputFile);
         FILE *fptr = fopen(outputFile, "w");
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < maxY; i++)
         {
-            for (int j = 0; j < 1; j++)
+            for (int j = 0; j < maxX; j++)
             {
                 fprintf(fptr, "%c", charset[allResults[i * maxX + j]]);
             }
